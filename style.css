@@ -2759,3 +2759,21 @@ nav {
             right: 20px;
         }
     }
+    /* --- FIX MARKETING BENTO GRID DESKTOP --- */
+    @media (min-width: 993px) {
+        .bento-grid {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            grid-template-rows: auto !important;
+            gap: 20px !important;
+        }
+    
+        /* Aseguramos que las tarjetas ocupen el espacio correcto */
+        .menu-feature {
+            grid-column: span 2 !important;
+        }
+    
+        .ads-feature {
+            grid-row: span 2 !important;
+        }
+    }
