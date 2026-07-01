@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avísame | Ruisu Industries</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+
+    <div class="canvas-container">
+        <div class="noise-overlay"></div>
+        <div id="bg-cursor-light"></div>
+        <div class="mesh-gradient"></div>
+    </div>
+
+    <nav>
+<div class="logo-container">
+    <a href="/">
+        <img src="img/logo.png" alt="Avísame App Logo" class="logo-img">
+        
+        <div class="logo-text">
+            <span class="text-white">AVÍSAME</span><span class="text-beige">APP</span>
+        </div>
+    </a>
+</div>
+        <div class="nav-links">
+            <a href="#">Soluciones</a>
+            <a href="#">Planes</a>
+            <a href="#">Visibilidad</a>
+        </div>
+    </nav>
+
+    <main class="hero">
+        <div class="hero-content">
+            <div class="particles-container" id="particles-js"></div>
+            <div class="badge">Automatización Avanzada | Resultados Medibles</div>
+            
+            <h1 class="reveal-text">
+                <span class="line">AUTOMATIZA</span>
+                <span class="line accent">TU RESTAURANTE.</span>
+            </h1>
+
+            <p class="hero-sub">
+                El cerebro digital que gestiona ventas, inventario y personal. 
+                Funciona 100% offline, eliminando el caos de raíz.
+            </p>
+            
+            <div class="cta-group">
+                <a href="#" class="btn-primary">Digitalizar mi negocio</a>
+                <a href="#" class="btn-secondary">Ver Demo</a>
+            </div>
+        </div>
+
+        <div class="phone-wrapper" id="phone-container">
+            <div class="phone-mockup">
+                <div class="screen-content">
+                    <div class="app-header">AVÍSAME APP</div>
+                    <div class="chart-container">
+                        <div class="bar-chart" style="height: 60%"></div>
+                        <div class="bar-chart" style="height: 85%"></div>
+                        <div class="bar-chart" style="height: 45%"></div>
+                        <div class="bar-chart" style="height: 70%"></div>
+                    </div>
+                    <div class="app-ui-list">
+                        <div class="ui-item"></div>
+                        <div class="ui-item"></div>
+                        <div class="ui-item"></div>
+                    </div>
+                </div>
+
+                <div class="order-ticket">
+    <div class="ticket-header">NUEVA ORDEN #082</div>
+    <div class="ticket-body">
+        <p>1x Hamburguesa Cheddar <span>$18.00</span></p>
+        <p>2x Coca Cola 1Lt <span>$14.00</span></p>
+        <p>1x P. Tiramisú <span>$10.00</span></p>
+    </div>
+    <div class="ticket-total">
+        TOTAL <span>$42.00</span>
+    </div>
+</div>
+            </div>
+        </div>
+    </main>
+
+<!-- Seccion 1 -->
+ <section class="flip-section">
+   <div class="fluid-solid-container">
+        <div class="solid-blob s-beige-lg"></div>
+        <div class="solid-blob s-white-md"></div>
+        <div class="solid-blob s-beige-sm"></div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none;">
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 25 -10" result="goo" />
+          <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+      </defs>
+    </svg>
+    <div class="section-header">
+        <h1 class="main-title">¿El caos frena tus <span class="text-gradient">ventas?</span></h1>
+        <p class="section-desc">Resolvemos los puntos críticos de tu operación con tecnología desde el primer día!.</p>
+    </div>
+    <div class="flip-grid">
+        <div class="flip-card card-tall">
+            <div class="flip-card-inner">
+                <div class="flip-card-front" style="background-image: url('img/offline.jpg');">
+                    <div class="card-overlay">
+                        <h3>Cero Caídas de Red</h3>
+                    </div>
+                </div>
+                <div class="flip-card-back">
+                    <div class="back-content">
+                        <i class="fa-solid fa-wifi"></i>
+                        <h4>Operación Offline</h4>
+                        <p>¿Sin señal? Tu operación no se detiene. Nuestro sistema gestiona todo localmente y sincroniza después.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front" style="background-image: url('img/desorden.jpg');">
+                    <div class="card-overlay">
+                        <h3>No más Desorden</h3>
+                    </div>
+                </div>
+                <div class="flip-card-back">
+                    <div class="back-content">
+                        <i class="fa-solid fa-receipt"></i>
+                        <h4>Control Total</h4>
+                        <p>Elimina el caos en cocina y los errores de comandas de raíz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front" style="background-image: url('img/espacio.jpg');">
+                    <div class="card-overlay">
+                        <h3>Mismo Espacio</h3>
+                    </div>
+                </div>
+                <div class="flip-card-back">
+                    <div class="back-content">
+                        <i class="fa-solid fa-tablet-screen-button"></i>
+                        <h4>Hardware Integrado</h4>
+                        <p>Corre y se instala donde quieras, no necesitas renovar equipos nuevos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card card-wide">
+            <div class="flip-card-inner">
+                <div class="flip-card-front" style="background-image: url('img/clientes.jpg');">
+                    <div class="card-overlay">
+                        <h3>Invisibilidad</h3>
+                    </div>
+                </div>
+                <div class="flip-card-back">
+                    <div class="back-content">
+                        <i class="fa-solid fa-magnifying-glass-location"></i>
+                        <h4>Alcance Digital</h4>
+                        <p>Posicionamos tu restaurante donde tus clientes están buscando hoy mismo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Seccion 2-->
+<section class="control-section">
+    <div class="particles-container" id="particles-js"></div>
+
+    <div class="control-container">
+        <div class="control-visual">
+            <div class="visual-card">
+                <div class="old-way">
+                    <i class="fa-solid fa-book-skull"></i>
+                    <span>El "Cuaderno"</span>
+                </div>
+                <div class="arrow-down">
+                    <i class="fa-solid fa-arrow-down-long"></i>
+                </div>
+                <div class="new-way">
+                    <div class="glow-icon">
+                        <i class="fa-solid fa-tablet-screen-button"></i>
+                    </div>
+                    <span>Control Digital</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-content">
+            <div class="mini-badge">¿PIERDES DINERO?</div>
+            <h2 class="control-title">Deja de adivinar cuánto <span class="text-gradient">vendiste.</span></h2>
+            <p class="control-desc">El desorden se come tus ganancias. Diseñamos un sistema tan fácil de usar como tu cuaderno, pero inteligente y seguro.</p>
+
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-hourglass-half"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>¿Cierre de Caja Eterno?</h4>
+                        <p>Deja de sumar papelitos a las 11 de la noche. Con un clic, sabes exactamente cuánto dinero debe haber en el cajón.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Inventario que no miente</h4>
+                        <p>El cuaderno no te avisa del robo hormiga. AvísameApp sí, cruzando ventas con stock en tiempo real.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-wifi"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Funciona SIN Internet</h4>
+                        <p>Nuestra tecnología 'Offline-First' te permite facturar y comandar aunque se caiga la señal o se vaya la luz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br><br>
+<!--Seccion 3-->
+<section class="efficiency-section">
+    <div class="horizontal-particles" id="h-particles"></div>
+    <div class="efficiency-header">
+        <div class="mini-badge-alt">SISTEMA INTEGRAL</div>
+        <h2 class="eff-title">
+            Deja de pagar 'Renta' <br> 
+            <span class="text-gradient">en reparaciones.</span>
+        </h2>
+        <p class="eff-desc">Tu software debe ser una inversión, no un gasto mensual en técnicos y parches.</p>
+    </div>
+
+    <div class="linear-efficiency-grid">
+        <div class="bento-item">
+            <div class="bento-icon"><i class="fa-solid fa-user-shield"></i></div>
+            <h3>El Fin del <br> 'Robo Hormiga'</h3>
+            <p>Si no se marca en la App, la comanda no existe para la cocina. Control total de cada plato.</p>
+        </div>
+
+        <div class="bento-item">
+            <div class="bento-icon"><i class="fa-solid fa-gauge-high"></i></div>
+            <h3>Adiós al <br> 'Escritorio Remoto'</h3>
+            <p>Acceso nativo y veloz. Olvida las conexiones lentas para ver tus ventas desde casa.</p>
+        </div>
+
+        <div class="bento-item">
+            <div class="bento-icon"><i class="fa-solid fa-person-walking"></i></div>
+            <h3>Deja de Caminar, <br> Vende Más</h3>
+            <p>Mesoneros equipados para facturar en mesa. Menos pasos, más rotación de clientes.</p>
+        </div>
+
+        <div class="bento-item">
+            <div class="bento-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            <h3>Cero Gastos <br> de Mantenimiento</h3>
+            <p>Diseñado para no fallar. Actualizaciones automáticas sin técnicos cobrando por hora.</p>
+        </div>
+    </div>
+</section>
+<br><br><br><br>
+
+<!--Cita-->
+<section class="quote-section" id="quote-area">
+    <div class="cursor-spotlight" id="spotlight"></div>
+    
+    <div class="quote-container">
+        <div class="quote-content">
+            <span class="quote-mark">“</span>
+            <h2 class="quote-text">
+                UN GRAN LOGRO COMIENZA CON UN <span class="gradient-text">GRAN DESEO</span>, 
+                UN <span class="gradient-text">SUEÑO</span>, UNA <span class="gradient-text">VISIÓN.</span>
+            </h2>
+            <p class="quote-author">FILOSOFÍA <strong>AvisameApp</strong></p>
+        </div>
+    </div>
+</section>
+<!--Seccion 4-->
+<section class="experience-section">
+  
+    <div class="experience-container">
+        <div class="exp-header">
+            <div class="mini-badge">USER EXPERIENCE</div>
+            <h2 class="exp-title">Diseñado para ser <br> <span class="text-gradient">invisible.</span></h2>
+            <p class="exp-desc">La mejor tecnología es la que no requiere un manual. Eliminamos la fricción para que tu equipo vuele.</p>
+        </div>
+
+        <div class="exp-grid">
+            <div class="exp-box">
+                <div class="exp-content">
+                    <div class="exp-icon-wrap">
+                        <i class="fa-solid fa-hand-pointer"></i>
+                    </div>
+                    <h3>Auditoría Forense</h3>
+                    <p>Trazabilidad absoluta de cada transacción y eliminación del 'robo hormiga'. Tu caja cuadra al centavo, devolviéndote la paz mental.</p>
+                </div>
+            </div>
+
+            <div class="exp-box">
+                <div class="exp-content">
+                    <div class="exp-icon-wrap">
+                        <i class="fa-solid fa-bolt-lightning"></i>
+                    </div>
+                    <h3>Acciones en dos toques</h3>
+                    <p>Interfaces minimalistas diseñadas para la urgencia. Tu personal de sala y cocina dominará el sistema al instante, sin complejas curvas de aprendizaje.</p>
+                </div>
+            </div>
+
+            <div class="exp-box">
+                <div class="exp-content">
+                    <div class="exp-icon-wrap">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h3>Eficiencia Implacable</h3>
+                    <p>Interfaces limpias, fuentes grandes y contraste alto. Pensado para el entorno real de un restaurante: poca luz, movimiento constante y rapidez.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Seccion 5-->
+<section class="menu-experience">
+    <div class="menu-wrapper">
+        <div class="menu-text-content">
+            <div class="mini-badge">EXPERIENCIA CLIENTE</div>
+            <h2 class="menu-main-title">Menú Interactivo <br> <span class="text-gradient">que vende por ti.</span></h2>
+            
+            <div class="feature-stack">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-camera-retro"></i>
+                    </div>
+                    <div class="feature-info">
+                        <h3>Visualización HD Inmersiva</h3>
+                        <p>No solo leen un nombre, saborean la imagen. Fotos en alta resolución diseñadas para antojar antes del primer clic.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-qrcode"></i>
+                    </div>
+                    <div class="feature-info">
+                        <h3>Acceso Instantáneo Web-App</h3>
+                        <p>Sin descargas tediosas ni registros. Escanean el QR y el menú carga en menos de 1 segundo directamente en su navegador.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-hourglass-half"></i>
+                    </div>
+                    <div class="feature-info">
+                        <h3>Lista de Espera Inteligente</h3>
+                        <p>Optimiza tu flujo. Si el local está lleno, tus clientes se registran digitalmente y esperan cómodamente sin bloquear tu entrada.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-visual-showcase">
+            <div class="visual-glow"></div>
+            <img src="img/cliente-feliz.png" alt="Menú Interactivo" class="main-menu-img">
+            <div class="floating-card-ui">
+                <i class="fa-solid fa-star"></i>
+                <span>+25% en ventas de postres</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Seccion 6-->
+<section class="workflow-section">
+    <div class="workflow-container">
+        <div class="workflow-header">
+            <div class="mini-badge">STAFF INTEGRADO</div>
+            <h2 class="workflow-title">
+                Un flujo de trabajo <br> 
+                <span class="text-gradient">diseñado para la urgencia.</span>
+            </h2>
+            <p class="workflow-subtitle">Sincronizamos a tu personal con un ecosistema digital que elimina la fricción operativa.</p>
+        </div>
+<br><br>
+        <div class="flow-items-stack">
+            <div class="flow-item">
+                <div class="flow-visual">
+                    <div class="image-wrap">
+                        <img src="img/mesero-app.png" alt="Mesonero atendiendo" class="main-img">
+                        <div class="visual-glow"></div>
+                        <div class="floating-interface staff-ui">
+                            <i class="fa-solid fa-bell"></i>
+                            <span>Mesa 4: Pedido Enviado</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flow-content">
+                    <span class="step-num">01</span>
+                    <h3>Agilidad en Mesa</h3>
+                    <ul class="flow-list">
+                        <li><i class="fa-solid fa-check"></i> <strong>Pedidos Rápido:</strong> Interfaz rápida para comandar en segundos.</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Comanda Digital:</strong> Cero fallos de interpretación.</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Control Stock:</strong>El sistema avisa si se acaba algo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flow-item reverse">
+                <div class="flow-visual">
+                    <div class="image-wrap">
+                        <img src="img/caja-app.png" alt="Cocina funcionando" class="main-img">
+                        <div class="visual-glow"></div>
+                        <div class="floating-interface kitchen-ui">
+                            <i class="fa-solid fa-fire-burner"></i>
+                            <span>Entrante #35 en Marcha</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flow-content">
+                    <span class="step-num">02</span>
+                    <h3>Control Total (Dueño)</h3>
+                    <ul class="flow-list">
+                        <li><i class="fa-solid fa-check"></i> <strong>Cierre Exacto:</strong> Cuadra con precisión.</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Reportes Reales:</strong> ¿Qué salsa se vende más?</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Gestión Remota:</strong> Revisa ventas desde casa.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flow-item">
+                <div class="flow-visual">
+                    <div class="image-wrap">
+                        <img src="img/reservas-app.png" alt="Personal en caja" class="main-img">
+                        <div class="visual-glow"></div>
+                        <div class="floating-interface admin-ui">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>Ticket Medio: +18%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flow-content">
+                    <span class="step-num">03</span>
+                    <h3>Reservas y Espera</h3>
+                    <ul class="flow-list">
+                        <li><i class="fa-solid fa-check"></i> <strong>Control Anticaos:</strong> Gestiona la alta demanda sin perder clientes.</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Organiza el Flujo:</strong> Ideal para noches concurridas o eventos.</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Notificaciones:</strong> Avisa por SMS/WhatsApp cuando la mesa está lista.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Seccion 7-->
+<section class="marketing-bento-section">
+    <div class="bento-container">
+        <div class="bento-header">
+            <div class="mini-badge">MARKETING AUTOMÁTICO</div>
+            <h2 class="bento-title">Más que un menú, <br> <span class="text-gradient">somos tu visibilidad.</span></h2>
+        </div>
+<br><br>
+        <div class="bento-grid">
+            <div class="bento-item menu-feature">
+                <div class="bento-content">
+                    <h3>Menú atractivo <br> y Visual</h3>
+                    <ul class="bento-list">
+                        <li><i class="fa-solid fa-camera"></i> <strong>Tráfico Orgánico:</strong> Te ven buscando "qué comer".</li>
+                        <li><i class="fa-solid fa-mobile-screen"></i> <strong>La Entrada al Ecosistema:</strong>  Fidelízalos con el servicio rápido.</li>
+                        <li><i class="fa-solid fa-clock"></i> <strong>Ahorro en Marketing:</strong> u cuota es inversión.</li>
+                    </ul>
+                </div>
+                <div class="bento-visual">
+                    <img src="img/menu-digital.png" alt="Menú Digital">
+                </div>
+            </div>
+
+            <div class="bento-item ads-feature">
+                <div class="bento-content">
+                    <i class="fa-solid fa-bullhorn icon-main"></i>
+                    <h3>Nosotros ponemos los Ads</h3>
+                    <p>Olvídate de configurar campañas complejas. Tu menú ya incluye publicidad activa.</p>
+                    <div class="ads-stats">
+                        <br>
+                        <div class="stat"><span>+Tráfico</span> Orgánico</div>
+                        <div class="stat"><span>+Fidelidad</span> Ecosistema</div>
+                    </div>
+                    <br>
+                    <button class="bento-btn">Quiero que me conozcan</button>
+                </div>
+            </div>
+
+            <div class="bento-item info-feature">
+                <div class="bento-content">
+                    <i class="fa-solid fa-piggy-bank"></i>
+                    <h4>Inversión Inteligente</h4>
+                    <br>
+                    <p>Tu cuota mensual no es un gasto, es tu motor de marketing.</p>
+                </div>
+            </div>
+            
+            <div class="bento-item visual-feature">
+                <img src="img/menu-digital.png" alt="Dashboard Ruisu">
+                <div class="glass-tag">Panel de Control 2.0</div>
+            </div>
+        </div>
+    </div>
+</section>
+<br><br><br>
+<!--Seccion 8-->
+<section class="map-section">
+    <div class="container">
+        <div class="bento-item map-container-wrapper">
+            <div class="map-info">
+                <h3>Publicidad que genera hambre</h3>
+                <p>Cuando alguien busca "dónde comer", tu local aparece primero. Convertimos búsquedas en mesas llenas.</p>
+                <br>
+                <div class="location-tag"><i class="fa-solid fa-location-dot"></i> Geolocalización precisa:</div>
+                <p>Te ven quienes están cerca.</p>
+                <br>
+                <div class="location-tag"><i class="fa-solid fa-hand-holding-usd"></i> Sin comisiones por venta:</div>
+                <p>La ganancia es tuya</p>
+            </div>
+            <div id="map"></div>
+        </div>
+    </div>
+</section>
+<!--Seccion 9-->
+<section class="marketing-bento">
+    <div class="container">
+        <div class="marketing-header">
+            <span class="section-tag">ESTRATEGIA</span>
+            <h2>No compitas con el Mapa. <span class="highlight">Sé el Destino.</span></h2>
+            
+            <p class="subtitle">Google Maps es para que te encuentren. <strong>Avísame App</strong> es para que te compren.</p>
+        </div>
+<br>
+        <div class="bento-grid-wrapper">
+            <div class="bento-card t-large">
+                <i class="fa-solid fa-wand-magic-sparkles icon-bento"></i>
+                <h3>SEO de Antojos</h3>
+                <p>Estructuramos tu menú para que cuando alguien busque 'Mejor Tarta de Queso', Google te posicione mejor.</p>
+            </div>
+
+            <div class="bento-card t-tall">
+                <i class="fa-solid fa-ban icon-bento"></i>
+                <h3>Adiós a la Frustración</h3>
+                <p>En Google ves una foto vieja. En AvisameApp, si se acaba la carne, el plato desaparece del menú al instante.</p>
+            </div>
+
+            <div class="bento-card t-tall">
+                <i class="fa-solid fa-face-smile-wink icon-bento"></i>
+                <h3>UX que Enamora</h3>
+                <p>Nada de pellizcar PDFs borrosos. Ofrece una experiencia móvil fluida, con filtros y fotos HD.</p>
+            </div>
+
+            <div class="bento-card t-wide">
+                <i class="fa-solid fa-arrows-to-dot icon-bento"></i>
+                <h3>De Lector a Comprador</h3>
+                <p>Google es lectura. Nosotros somos transaccionales: el cliente elige, personaliza y pide. Convertimos espera en venta.</p>
+            </div>
+
+            <div class="bento-card t-medium">
+                <i class="fa-solid fa-database icon-bento"></i>
+                <h3>Tu Data, Tu Oro</h3>
+                <p>Google se guarda los datos. Nosotros te decimos qué plato se ve mucho pero se pide poco. Inteligencia real.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Seccion 10-->
+<section class="masonry-divider">
+    <div class="particles-bg" id="masonry-particles"></div>
+    
+    <div class="container">
+        <div class="marketing-header">
+            <span class="section-tag">BENEFICIOS</span>
+            <h2>Inteligencia Artificial <span class="highlight">que se adapta a ti.</span></h2>
+            <p class="subtitle">Google Maps es para que te encuentren. <strong>Avísame App</strong> es para que te compren.</p>
+        </div>
+<br><Br>
+        <div class="masonry-wrapper">
+            <div class="m-card float-1">
+                <i class="fa-solid fa-brain"></i>
+                <h3>Comanda Inteligente</h3>
+                <p>El sistema sabe a dónde enviar el pedido. Bebidas a la barra, hamburguesas a la plancha, automáticamente.</p>
+            </div>
+
+            <div class="m-card float-2">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <h3>Vendedor Silencioso</h3>
+                <p>El menú sugiere acompañantes basándose en lo que más se vende, aumentando tu ticket promedio.</p>
+            </div>
+
+            <div class="m-card float-3">
+                <i class="fa-solid fa-chart-pie"></i>
+                <h3>Predicción de Demanda</h3>
+                <p>¿Viernes de lluvia? La IA analiza tu historial para decirte qué esperar y cómo prepararte.</p>
+            </div>
+
+            <div class="m-card float-1">
+                <i class="fa-solid fa-truck-moving"></i>
+                <h3>Food Trucks</h3>
+                <p>Movilidad total. Rápido, ligero y funciona perfecto aunque falle la señal del evento.</p>
+            </div>
+
+            <div class="m-card float-2">
+                <i class="fa-solid fa-utensils"></i>
+                <h3>Restaurantes</h3>
+                <p>Gestión de mesas elegante, división de cuentas y una experiencia de servicio impecable.</p>
+            </div>
+
+            <div class="m-card float-3">
+                <i class="fa-solid fa-stopwatch"></i>
+                <h3>Comida Rápida</h3>
+                <p>Velocidad extrema. Toma pedidos en la fila y mantén la cocina produciendo sin pausas.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Seccion 11-->
+<section class="core-engine-section">
+    <div id="data-stream-bg"></div>
+
+    <div class="container">
+        <div class="engine-header">
+            <div class="status-badge"><span class="blink">●</span> SYSTEM READY</div>
+            <h2>Infraestructura <span class="accent">Core</span></h2>
+        </div>
+
+        <div class="engine-panels">
+            <div class="panel api-panel">
+                <div class="panel-terminal-header">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    <span class="terminal-title">api_integration.sys</span>
+                </div>
+                <div class="panel-body">
+                    <i class="fa-solid fa-code"></i>
+                    <h3>Integración API</h3>
+                    <p>Conectividad total. Sincronizamos tu flujo con herramientas externas mediante arquitectura RESTful de alta disponibilidad.</p>
+                    <div class="code-line"><span>01</span> status: connected</div>
+                    <div class="code-line"><span>02</span> latency: 12ms</div>
+                </div>
+            </div>
+
+            <div class="panel support-panel">
+                <div class="panel-terminal-header">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    <span class="terminal-title">pro_support.log</span>
+                </div>
+                <div class="panel-body">
+                    <i class="fa-solid fa-user-gear"></i>
+                    <h3>Respaldo Profesional</h3>
+                    <p>Ingeniería humana a tu disposición. Soporte técnico especializado para garantizar el 99.9% de uptime operativo.</p>
+                    <div class="support-badge">24/7 PRIORITY</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--FAQ-->
+<section class="faq-tech-section">
+    <div class="faq-glow"></div>
+    <div class="container">
+        <div class="faq-header">
+            <span class="section-tag">SOPORTE</span>
+            <h2>Despejando el <span class="highlight">Panorama.</span></h2>
+        </div>
+
+        <div class="faq-accordion-container">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>¿Sirve para un Food Truck si tengo poco espacio?</span>
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>¡Es ideal! Avísame App está diseñada para ser compacta. Operas desde una tablet y una impresora pequeña.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>¿Puedo contratar solo el Menú Digital?</span>
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>¡Sí! Es excelente para empezar. Obtienes tu QR y apareces en nuestro mapa para atraer clientes.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>¿Qué pasa si se va el internet?</span>
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Nada. Nuestro sistema Híbrido sigue trabajando 100% offline y sincroniza cuando vuelve la señal.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Mis clientes, ¿necesitan instalar alguna aplicación?</span>
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>¡No! Tus clientes solo escanean el QR y listo. Acceden al menú desde su navegador.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Footer-->
+<footer class="main-footer">
+    <div id="footer-particles"></div>
+
+    <div class="container">
+        <div class="footer-content">
+            
+            <div class="footer-brand-section">
+                <div class="footer-logo">AVÍSAME<span>APP</span></div>
+                <p class="footer-description">
+                    Ingeniería aplicada al crecimiento gastronómico. <br>
+                    Transformamos la intención en transacciones reales.
+                </p>
+                
+                <div class="footer-downloads">
+                    <a href="#" class="btn-footer-dl">
+                        <i class="fa-brands fa-android"></i>
+                        <div class="dl-text">
+                            <span>Instalador Directo</span>
+                            <strong>Descargar APK</strong>
+                        </div>
+                    </a>
+                    <a href="#" class="btn-footer-dl">
+                        <i class="fa-solid fa-desktop"></i>
+                        <div class="dl-text">
+                            <span>Versión Desktop</span>
+                            <strong>Descargar para PC</strong>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-nav">
+                <div class="nav-group">
+                    <h4>Plataforma</h4>
+                    <ul>
+                        <li><a href="#">Inteligencia Artificial</a></li>
+                        <li><a href="#">Integración API</a></li>
+                        <li><a href="#">Soporte</a></li>
+                    </ul>
+                </div>
+                <div class="nav-group">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="#">Soporte Técnico</a></li>
+                        <li><a href="#">Ventas</a></li>
+                        <li><a href="#">WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; AvisameApp. Todos los derechos reservados.</p>
+            <div class="footer-socials">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="script.js"></script>
+</body>
+</html>
