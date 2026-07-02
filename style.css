@@ -2568,7 +2568,7 @@ nav {
 .footer-socials {
     display: flex;
     gap: 30px !important; /* Más espacio entre iconos */
-    justify-content: center;
+    justify-content: left;
     margin-top: 20px;
 }
 
@@ -2726,10 +2726,16 @@ nav {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 20px !important;
         }
+        .footer-socials {
+            display: flex;
+            gap: 30px !important; /* Más espacio entre iconos */
+            justify-content: center;
+            margin-top: 20px;
+        }
     }
     /* --- BOTÓN FLOTANTE WHATSAPP --- */
     .whatsapp-float {
-        position: fixed;
+        position: fixed !important;
         bottom: 30px;
         right: 30px;
         background-color: #25d366;
@@ -2740,7 +2746,7 @@ nav {
         text-align: center;
         font-size: 35px;
         line-height: 60px;
-        z-index: 10000; /* Asegura que esté por encima de todo */
+        z-index: 9999999 !important; /* z-index MUY ALTO */
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         transition: all 0.3s ease;
     }
@@ -2754,13 +2760,14 @@ nav {
     /* Ajuste para móviles */
     @media (max-width: 768px) {
         .whatsapp-float {
-            width: 55px;
-            height: 55px;
-            font-size: 30px;
-            line-height: 55px;
-            bottom: 20px;
-            right: 20px;
-        }
+                width: 55px;
+                height: 55px;
+                font-size: 30px;
+                line-height: 55px;
+                bottom: 20px;
+                right: 20px;
+                z-index: 9999999 !important; /* z-index MUY ALTO */
+            }
     }
     /* --- FIX MARKETING BENTO GRID DESKTOP --- */
     @media (min-width: 993px) {
