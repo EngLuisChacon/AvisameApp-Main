@@ -269,6 +269,7 @@ nav {
     );
     background-size: 200% auto;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shineLupa 4s linear infinite;
 }
@@ -638,6 +639,7 @@ nav {
     /* Degradado beige/crema de tu paleta */
     background: linear-gradient(to right, #ffffff, var(--accent-cream));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -1186,6 +1188,7 @@ nav {
 .gradient-text {
     background: linear-gradient(135deg, #e3d1c4 0%, #a89385 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
 }
