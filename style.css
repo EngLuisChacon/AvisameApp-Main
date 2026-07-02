@@ -2780,3 +2780,202 @@ nav {
             grid-row: span 2 !important;
         }
     }
+  
+    /* --- SECCIÓN DE PRECIOS ESTILO APPLE --- */
+    .pricing-section-apple {
+        padding: 100px 8%;
+        background: #121212;
+        position: relative;
+        overflow: hidden;
+        border-top: 1px solid rgba(227, 209, 196, 0.1);
+        text-align: center;
+    }
+    
+    .pricing-grid-apple {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-top: 40px; /* Espacio para el "Más Popular" */
+    }
+    
+    .pricing-card-apple {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(227, 209, 196, 0.1);
+        border-radius: 30px;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        position: relative; /* Para el badge de "Más Popular" */
+    }
+    
+    .pricing-card-apple:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(227, 209, 196, 0.2);
+        border-color: var(--accent-cream);
+    }
+    
+    .pricing-card-apple.popular {
+        border-color: var(--accent-cream); /* Borde dorado para el popular */
+        box-shadow: 0 0 25px rgba(227, 209, 196, 0.3); /* Sombra dorada */
+    }
+    
+    .most-popular-badge {
+        position: absolute;
+        top: -15px; /* Posiciona arriba */
+        right: 20px;
+        background: linear-gradient(90deg, #fff5e0, #e3d1c4); /* Degradado dorado */
+        color: #000;
+        padding: 5px 20px;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+        transform: rotate(15deg); /* Ligeramente inclinado */
+        z-index: 10;
+    }
+    
+    /* Icono sobre el título */
+    .icon-container {
+        margin-bottom: 20px;
+    }
+    
+    .icon-container i {
+        font-size: 3rem; /* Tamaño del icono */
+        color: var(--accent-cream);
+        display: inline-block;
+        text-align: center;
+        background: rgba(227, 209, 196, 0.1);
+        padding: 20px;
+        border-radius: 15px; /* Bordes más suaves */
+    }
+    
+    .card-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%; /* Para que tome la altura total de la card */
+    }
+    
+    .card-header-price {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    
+    .price-display {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+    
+    .original-price {
+        font-size: 1.2rem;
+        color: #777;
+        text-decoration: line-through;
+        font-weight: 600;
+    }
+    
+    .discounted-price {
+        font-size: 2.8rem;
+        font-weight: 900;
+        color: var(--accent-cream);
+        line-height: 1;
+    }
+    
+    .price-unit {
+        font-size: 1rem;
+        color: var(--accent-cream);
+        font-weight: 700;
+        align-self: flex-end;
+        margin-bottom: 5px;
+    }
+    
+    .annual-price-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .annual-price {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--accent-cream);
+        padding: 8px 18px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--accent-cream);
+    }
+    
+    .annual-discount {
+        font-size: 0.7rem;
+        color: #aaa;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 5px;
+    }
+    
+    .pricing-card-apple ul {
+        list-style: none;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        width: 100%; /* Asegura que ocupe el ancho */
+    }
+    
+    .pricing-card-apple ul li {
+        margin-bottom: 15px;
+        color: var(--metallic-gray);
+        font-size: 1rem;
+        font-weight: 600;
+        display: flex !important;
+        align-items: center;
+        gap: 10px;
+        justify-content: center;
+    }
+    
+    .pricing-card-apple ul li i {
+        color: var(--accent-cream);
+        font-size: 0.8rem;
+        display: inline-block;
+        width: 1.2em;
+        text-align: center;
+    }
+    
+    /* --- RESPONSIVE DE PRECIOS ESTILO APPLE --- */
+    @media (max-width: 992px) {
+        .pricing-grid-apple {
+            grid-template-columns: repeat(2, 1fr); /* Dos columnas en tablet */
+            gap: 25px;
+        }
+        .pricing-card-apple { height: auto; padding: 30px 20px; }
+    }
+    
+    @media (max-width: 768px) {
+        .pricing-section-apple { padding: 60px 20px !important; }
+        .pricing-grid-apple {
+            grid-template-columns: 1fr; /* Una sola columna en móvil */
+            gap: 20px;
+        }
+        .pricing-card-apple {
+            max-width: 100% !important;
+            margin: 0 auto !important;
+            padding: 30px 25px !important;
+        }
+        .pricing-card-apple h3 { font-size: 1.5rem; }
+        .price-display { margin-bottom: 10px; }
+        .discounted-price { font-size: 2rem; }
+        .price-unit { font-size: 0.9rem; }
+        .original-price { font-size: 1.1rem; }
+        .annual-price { font-size: 0.85rem; padding: 7px 15px; }
+        .annual-discount { font-size: 0.6rem; }
+    }
